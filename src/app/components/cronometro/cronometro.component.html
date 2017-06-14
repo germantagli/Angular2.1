@@ -1,0 +1,37 @@
+
+<div class="panel panel-default">
+  <div class="panel-body">
+   <h2 class="text-muted">Fabaris <small>Cronometro</small></h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <button type="button" class="btn btn-success" (click)="start()"> Empezar</button>
+        <button type="button" class="btn btn-warning" (click)="lapso()"> Lapso</button>
+        <button type="button" class="btn btn-danger" (click)="stop()">  Parar</button>
+    </div>
+    <div class="col-md-6">
+        <h1><p  style="color:Blue;">{{hora}}:{{minuto}}:{{segundos}}</p></h1>
+    </div>
+</div>
+
+
+    <table class="table">
+        <thead class="thead-inverse">
+            <tr>
+                <th>Volte</th>
+                <th>Tempo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cole of colecction">
+                <td>{{cole.numero}}</td>   
+                <td>{{cole.hora}}:{{cole.minuto}}:{{cole.segundos}}</td>            
+            </tr>
+        </tbody>
+    </table>
+  </div>
+</div>
+
+    
+          
+      

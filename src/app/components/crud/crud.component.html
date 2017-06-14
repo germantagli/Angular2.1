@@ -1,0 +1,149 @@
+
+
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <h2 class="text-muted">Fabaris <small>Crud</small></h2>
+      
+          
+          
+          
+          <div class="col-sm-7 col-md-offset-2">
+<div class="panel panel-default">
+              
+               
+
+                <div class="panel-heading">
+                     Ingresi Dati
+                </div>
+                <div class="panel-body"> 
+
+                    <div class="card mb-3">
+
+
+                        <div class="card-block">
+                            <form role="form">
+                                <div class="form-group ">
+                                    <input type="text" class="form-control " name="name" placeholder="Nombre" id="name" [(ngModel)]="model1.name">
+                                </div>
+
+                                <div class="form-group ">
+                                    <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Cognome" [(ngModel)]="model1.apellido">
+                                </div>
+
+                                <div class="form-group ">
+                                    <input type="text" class="form-control " name="contrasena" placeholder="Contrasena" id="contrasena" [(ngModel)]="model1.contrasena">
+                                </div>
+
+                                <div class="form-group">
+                                    <hr>
+                                    <button type="submit" class="btn btn-md btn-success btn-block" (click)="addEmpleado()">Aggiungere</button>
+
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+                     
+                 </div>
+            
+           
+
+
+
+            
+            <hr>
+
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th width="400">Nome </th>
+                        <th width="400">Cognome</th>
+                        <th width="400">Contrasena</th>
+                        <th width="400">Accion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let empleado of empleados; let i=index;">
+
+                        <td>{{empleado.name}}</td>
+                        <td>{{empleado.apellido}} </td>
+                        <td>{{empleado.contrasena}}</td>
+                        <td>
+                            <button type="text" class="btn btn-sm btn-warning" (click)="editEmpleado(i)" id="" data-toggle="modal" data-target="#myModal">Modificare</button>
+                            <button type="text" class="btn btn-sm btn-danger" (click)="borrarEmpleado(i)" id="">Cancellare</button></td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+<div class="container">
+
+    <!-- Trigger the modal with a button -->
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"> Update Dati</h4>
+                </div>
+                <div class="modal-body">
+
+
+                    <div class="card-block">
+                        <form role="form">
+                            <div class="form-group ">
+                                <input type="text" class="form-control " name="name" placeholder="Nombre" id="name" [(ngModel)]="model2.name">
+                            </div>
+
+                            <div class="form-group ">
+                                <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Cognome" [(ngModel)]="model2.apellido">
+                            </div>
+
+                            <div class="form-group ">
+                                <input type="text" class="form-control " name="contrasena" placeholder="Contrasena" id="contrasena" [(ngModel)]="model2.contrasena">
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-md btn-primary btn-block" (click)="updateEmpleado()" data-dismiss="modal">Updatee</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
